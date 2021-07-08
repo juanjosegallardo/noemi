@@ -1,7 +1,8 @@
 ﻿Public Class Euler
 
     Private Function df(x As Double, y As Double)
-        Return Math.Sin(x) - Math.Log(y)
+        Return x * Math.Sqrt(y)
+        'Return Math.Sin(x) - Math.Log(y)
     End Function
 
     Private Sub Euler_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,18 +20,19 @@
         y = y0
         h = (xf - x0) / n
 
-        For i = 0 To n - 1
+        For k = 0 To n
             d = df(x, y)
+            imprimir(k, x, y, d)
             y = y + h * df(x, y)
             x = x + h
-            imprimir(x, y, d)
+
         Next
 
     End Sub
 
-    Sub imprimir(x As Double, y As Double, df As Double)
+    Sub imprimir(k As Integer, x As Double, y As Double, df As Double)
 
-        dgvTabla.Rows.Add(df, x, y)
+        dgvTabla.Rows.Add(k, df, x, y)
 
     End Sub
 End Class

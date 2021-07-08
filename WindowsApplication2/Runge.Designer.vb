@@ -22,16 +22,8 @@ Partial Class Runge
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txtPaso = New System.Windows.Forms.TextBox()
         Me.btnCalcular = New System.Windows.Forms.Button()
         Me.dgvTabla = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtY0 = New System.Windows.Forms.TextBox()
-        Me.txtIteraciones = New System.Windows.Forms.TextBox()
-        Me.label = New System.Windows.Forms.Label()
-        Me.txtX0 = New System.Windows.Forms.TextBox()
-        Me.label10 = New System.Windows.Forms.Label()
         Me.col = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.xk = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.yk = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,15 +31,17 @@ Partial Class Runge
         Me.k2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.k3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.k4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtY0 = New System.Windows.Forms.TextBox()
+        Me.txtIteraciones = New System.Windows.Forms.TextBox()
+        Me.label = New System.Windows.Forms.Label()
+        Me.txtX0 = New System.Windows.Forms.TextBox()
+        Me.label10 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtXf = New System.Windows.Forms.TextBox()
         CType(Me.dgvTabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'txtPaso
-        '
-        Me.txtPaso.Location = New System.Drawing.Point(14, 29)
-        Me.txtPaso.Name = "txtPaso"
-        Me.txtPaso.Size = New System.Drawing.Size(116, 20)
-        Me.txtPaso.TabIndex = 0
         '
         'btnCalcular
         '
@@ -66,63 +60,6 @@ Partial Class Runge
         Me.dgvTabla.Name = "dgvTabla"
         Me.dgvTabla.Size = New System.Drawing.Size(457, 219)
         Me.dgvTabla.TabIndex = 6
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(67, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(15, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "H"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(64, 91)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(18, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "y0"
-        '
-        'txtY0
-        '
-        Me.txtY0.Location = New System.Drawing.Point(12, 107)
-        Me.txtY0.Name = "txtY0"
-        Me.txtY0.Size = New System.Drawing.Size(116, 20)
-        Me.txtY0.TabIndex = 2
-        '
-        'txtIteraciones
-        '
-        Me.txtIteraciones.Location = New System.Drawing.Point(12, 150)
-        Me.txtIteraciones.Name = "txtIteraciones"
-        Me.txtIteraciones.Size = New System.Drawing.Size(116, 20)
-        Me.txtIteraciones.TabIndex = 3
-        '
-        'label
-        '
-        Me.label.AutoSize = True
-        Me.label.Location = New System.Drawing.Point(46, 134)
-        Me.label.Name = "label"
-        Me.label.Size = New System.Drawing.Size(59, 13)
-        Me.label.TabIndex = 8
-        Me.label.Text = "Iteraciones"
-        '
-        'txtX0
-        '
-        Me.txtX0.Location = New System.Drawing.Point(13, 68)
-        Me.txtX0.Name = "txtX0"
-        Me.txtX0.Size = New System.Drawing.Size(117, 20)
-        Me.txtX0.TabIndex = 1
-        '
-        'label10
-        '
-        Me.label10.AutoSize = True
-        Me.label10.Location = New System.Drawing.Point(61, 52)
-        Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(18, 13)
-        Me.label10.TabIndex = 10
-        Me.label10.Text = "x0"
         '
         'col
         '
@@ -166,11 +103,85 @@ Partial Class Runge
         Me.k4.Name = "k4"
         Me.k4.Width = 50
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(67, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
+        Me.Label1.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(56, 91)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(18, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "y0"
+        '
+        'txtY0
+        '
+        Me.txtY0.Location = New System.Drawing.Point(12, 107)
+        Me.txtY0.Name = "txtY0"
+        Me.txtY0.Size = New System.Drawing.Size(116, 20)
+        Me.txtY0.TabIndex = 3
+        '
+        'txtIteraciones
+        '
+        Me.txtIteraciones.Location = New System.Drawing.Point(12, 150)
+        Me.txtIteraciones.Name = "txtIteraciones"
+        Me.txtIteraciones.Size = New System.Drawing.Size(116, 20)
+        Me.txtIteraciones.TabIndex = 4
+        '
+        'label
+        '
+        Me.label.AutoSize = True
+        Me.label.Location = New System.Drawing.Point(67, 134)
+        Me.label.Name = "label"
+        Me.label.Size = New System.Drawing.Size(13, 13)
+        Me.label.TabIndex = 8
+        Me.label.Text = "n"
+        '
+        'txtX0
+        '
+        Me.txtX0.Location = New System.Drawing.Point(11, 29)
+        Me.txtX0.Name = "txtX0"
+        Me.txtX0.Size = New System.Drawing.Size(117, 20)
+        Me.txtX0.TabIndex = 1
+        '
+        'label10
+        '
+        Me.label10.AutoSize = True
+        Me.label10.Location = New System.Drawing.Point(59, 13)
+        Me.label10.Name = "label10"
+        Me.label10.Size = New System.Drawing.Size(18, 13)
+        Me.label10.TabIndex = 10
+        Me.label10.Text = "x0"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(59, 52)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(15, 13)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "xf"
+        '
+        'txtXf
+        '
+        Me.txtXf.Location = New System.Drawing.Point(11, 68)
+        Me.txtXf.Name = "txtXf"
+        Me.txtXf.Size = New System.Drawing.Size(117, 20)
+        Me.txtXf.TabIndex = 2
+        '
         'Runge
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(622, 245)
+        Me.Controls.Add(Me.txtXf)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.label10)
         Me.Controls.Add(Me.txtX0)
         Me.Controls.Add(Me.label)
@@ -180,7 +191,6 @@ Partial Class Runge
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvTabla)
         Me.Controls.Add(Me.btnCalcular)
-        Me.Controls.Add(Me.txtPaso)
         Me.Name = "Runge"
         Me.Text = "Runge"
         CType(Me.dgvTabla, System.ComponentModel.ISupportInitialize).EndInit()
@@ -188,7 +198,6 @@ Partial Class Runge
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtPaso As System.Windows.Forms.TextBox
     Friend WithEvents btnCalcular As System.Windows.Forms.Button
     Friend WithEvents dgvTabla As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -205,4 +214,6 @@ Partial Class Runge
     Friend WithEvents k2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents k3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents k4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtXf As TextBox
 End Class

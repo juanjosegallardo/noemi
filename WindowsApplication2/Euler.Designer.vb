@@ -32,6 +32,7 @@ Partial Class Euler
         Me.txtY0 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtN = New System.Windows.Forms.TextBox()
+        Me.columns = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.derivada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.x = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.y = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,7 +42,7 @@ Partial Class Euler
         'dgvTabla
         '
         Me.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.derivada, Me.x, Me.y})
+        Me.dgvTabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.columns, Me.derivada, Me.x, Me.y})
         Me.dgvTabla.Location = New System.Drawing.Point(119, 12)
         Me.dgvTabla.Name = "dgvTabla"
         Me.dgvTabla.Size = New System.Drawing.Size(540, 198)
@@ -120,6 +121,11 @@ Partial Class Euler
         Me.txtN.Size = New System.Drawing.Size(100, 20)
         Me.txtN.TabIndex = 9
         '
+        'columns
+        '
+        Me.columns.HeaderText = "k"
+        Me.columns.Name = "columns"
+        '
         'derivada
         '
         Me.derivada.HeaderText = "dy/dx"
@@ -167,7 +173,8 @@ Partial Class Euler
     Friend WithEvents txtY0 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtN As System.Windows.Forms.TextBox
-    Friend WithEvents derivada As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents x As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents y As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents columns As DataGridViewTextBoxColumn
+    Friend WithEvents derivada As DataGridViewTextBoxColumn
+    Friend WithEvents x As DataGridViewTextBoxColumn
+    Friend WithEvents y As DataGridViewTextBoxColumn
 End Class

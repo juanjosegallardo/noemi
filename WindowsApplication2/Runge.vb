@@ -5,15 +5,19 @@
     End Sub
 
     Private Function df(x As Double, y As Double)
-        Return -20 * y + 7 * Math.Exp(x * -0.5)
+        'Return -20 * y + 7 * Math.Exp(x * -0.5)
+        Return x * Math.Sqrt(y)
     End Function
 
-    Private Sub Calcular(iteraciones As Integer, h As Double, x0 As Double, y0 As Double)
-        Dim k1, k2, k3, k4, xk, yk As Double
+    Private Sub Calcular(x0 As Double, xf As Double, y0 As Double, n As Integer)
+        Dim k1, k2, k3, k4, xk, yk, h As Double
         yk = y0
         xk = x0
 
-        For k = 0 To iteraciones - 1
+
+        h = (xf - x0) / n
+
+        For k = 0 To n
 
 
             k1 = df(xk, yk)
@@ -34,7 +38,7 @@
     End Sub
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
         dgvTabla.Rows.Clear()
-        Calcular(txtIteraciones.Text, txtPaso.Text, txtX0.Text, txtY0.Text)
+        Calcular(txtX0.Text, txtXf.Text, txtY0.Text, txtIteraciones.Text)
 
     End Sub
 
